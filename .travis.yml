@@ -5,10 +5,10 @@ branches:
 services:
   - docker
 
-#before_install:
-#  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+before_install:
+- docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 
 script:
-  - docker build --no-cache -t cloudqq/electron-docker .
-#  - docker tag cloudqq/alpine-node-v5.9.0:latest cloudqq/alpine-node-v5.9.0:v1
-#  - docker push cloudqq/alpine-node-v5.9.0
+- docker build --no-cache -t cloudqq/electron-docker .
+- docker tag cloudqq/electron-docker:latest cloudqq/electron-docker:v1
+- docker push cloudqq/electron-docker
